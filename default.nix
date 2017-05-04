@@ -13,7 +13,12 @@ stdenv.mkDerivation rec {
 
   elixir = pkgs.callPackage ./packages/elixir {};
 
+  perl_MaxMindDBWriter = pkgs.callPackage ./packages/perl/MaxMindDBWriter {};
+
   buildInputs = [
     elixir
+
+    perl
+    perl_MaxMindDBWriter
   ];
 }
