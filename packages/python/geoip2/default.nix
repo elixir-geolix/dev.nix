@@ -12,7 +12,9 @@ pythonPackages.buildPythonPackage rec {
     sha256 = "10659k4k00q1phww1d9pr8j2k2qamb0i134apmfnikr8q1qcbjkk";
   };
 
-  buildInputs = with pythonPackages; [ requests2 ];
+  propagatedBuildInputs = with pythonPackages; [
+    python_maxminddb
 
-  propagatedBuildInputs = [ python_maxminddb ];
+    requests2
+  ];
 }
