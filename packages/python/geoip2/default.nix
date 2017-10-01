@@ -15,6 +15,6 @@ pythonPackages.buildPythonPackage rec {
   propagatedBuildInputs = with pythonPackages; [
     python_maxminddb
 
-    requests2
+    requests
   ];
 }
