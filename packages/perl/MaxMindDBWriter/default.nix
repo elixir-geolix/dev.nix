@@ -16,10 +16,10 @@ buildPerlPackage rec {
   perl_TestBits           = pkgs.callPackage ../TestBits {};
   perl_TestHexDifferences = pkgs.callPackage ../TestHexDifferences {};
 
-  name = "MaxMind-DB-Writer-0.202000";
+  name = "MaxMind-DB-Writer-0.300001";
   src  = fetchurl {
     url    = "mirror://cpan/authors/id/M/MA/MAXMIND/${name}.tar.gz";
-    sha256 = "b711d1464af0d7c3c98a45544f0c5762235052056f8d3b020b90fd29d8ca4bea";
+    sha256 = "0sas48fp9p96jdxnwh2dsw59sw63n7rxxdgs4zn9appjg25mm2ip";
   };
 
   configurePhase = "touch Makefile.PL";
