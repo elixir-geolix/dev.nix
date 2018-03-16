@@ -4,12 +4,12 @@ pythonPackages.buildPythonPackage rec {
   python_maxminddb = pkgs.callPackage ../maxminddb { inherit pythonPackages; };
 
   pname   = "geoip2";
-  version = "2.5.0";
+  version = "2.7.0";
   name    = "${pname}-${version}";
 
   src = pythonPackages.fetchPypi {
     inherit pname version;
-    sha256 = "10659k4k00q1phww1d9pr8j2k2qamb0i134apmfnikr8q1qcbjkk";
+    sha256 = "0ia95hjxdk3pa631lyganysl6y5kki82d4hjynv12yv2pn3q551f";
   };
 
   propagatedBuildInputs = with pythonPackages; [
