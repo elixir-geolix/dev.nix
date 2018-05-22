@@ -22,6 +22,9 @@ stdenv.mkDerivation rec {
     perl
     perl_MaxMindDBWriter
 
+    perlPackages.FileSlurper
+    perlPackages.CpanelJSONXS
+
     python2
     python2_geoip2
   ];
