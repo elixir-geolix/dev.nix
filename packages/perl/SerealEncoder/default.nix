@@ -4,10 +4,10 @@
 buildPerlPackage rec {
   perl_SerealDecoder = pkgs.callPackage ../SerealDecoder {};
 
-  name = "Sereal-Encoder-3.015";
+  name = "Sereal-Encoder-4.005";
   src  = fetchurl {
     url    = "mirror://cpan/authors/id/Y/YV/YVES/${name}.tar.gz";
-    sha256 = "b7b2eb1dac6489308aa2c4dfa3ac31d3d9139bc1a126e4741d11991531440855";
+    sha256 = "02hbk5dwq7fpnyb3vp7xxhb41ra48xhghl13p9pjq9lzsqlb6l19";
   };
 
   buildInputs = with perlPackages; [

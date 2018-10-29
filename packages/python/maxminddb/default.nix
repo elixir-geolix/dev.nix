@@ -10,5 +10,10 @@ pythonPackages.buildPythonPackage rec {
     sha256 = "1gn4pc143pi8xd9cq2b1xz2i326ics94ilpji5wbnk4bs2v9j8wp";
   };
 
-  propagatedBuildInputs = with pythonPackages; [ ipaddress ];
+  buildInputs = with pythonPackages; [ nose ];
+
+  propagatedBuildInputs = with pythonPackages; [
+    ipaddress
+    requests-mock
+  ];
 }
