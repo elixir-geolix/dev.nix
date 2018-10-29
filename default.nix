@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
   };
 
   shellHook = ''
-    export PS1="[${name}:\w]$ "
+    export PS1="[geolix|\[\e[1m\]\w\[\e[0m\]]$ "
   '';
 
   elixir = pkgs.callPackage ./packages/elixir {};
