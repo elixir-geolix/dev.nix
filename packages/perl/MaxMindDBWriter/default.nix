@@ -2,30 +2,30 @@
 
 # nix-generate-from-cpan
 buildPerlPackage rec {
-  perl_DataIEEE754        = pkgs.callPackage ../DataIEEE754 {};
-  perl_DataPrinter        = pkgs.callPackage ../DataPrinter {};
-  perl_DevelRefcount      = pkgs.callPackage ../DevelRefcount {};
-  perl_MathInt128         = pkgs.callPackage ../MathInt128 {};
-  perl_MathInt64          = pkgs.callPackage ../MathInt64 {};
-  perl_MaxMindDBCommon    = pkgs.callPackage ../MaxMindDBCommon {};
-  perl_MaxMindDBReader    = pkgs.callPackage ../MaxMindDBReader {};
-  perl_NetWorks           = pkgs.callPackage ../NetWorks {};
-  perl_ScalarUtil         = pkgs.callPackage ../ScalarUtil {};
-  perl_SerealDecoder      = pkgs.callPackage ../SerealDecoder {};
-  perl_SerealEncoder      = pkgs.callPackage ../SerealEncoder {};
-  perl_TestBits           = pkgs.callPackage ../TestBits {};
+  perl_DataIEEE754 = pkgs.callPackage ../DataIEEE754 {};
+  perl_DataPrinter = pkgs.callPackage ../DataPrinter {};
+  perl_DevelRefcount = pkgs.callPackage ../DevelRefcount {};
+  perl_MathInt128 = pkgs.callPackage ../MathInt128 {};
+  perl_MathInt64 = pkgs.callPackage ../MathInt64 {};
+  perl_MaxMindDBCommon = pkgs.callPackage ../MaxMindDBCommon {};
+  perl_MaxMindDBReader = pkgs.callPackage ../MaxMindDBReader {};
+  perl_NetWorks = pkgs.callPackage ../NetWorks {};
+  perl_ScalarUtil = pkgs.callPackage ../ScalarUtil {};
+  perl_SerealDecoder = pkgs.callPackage ../SerealDecoder {};
+  perl_SerealEncoder = pkgs.callPackage ../SerealEncoder {};
+  perl_TestBits = pkgs.callPackage ../TestBits {};
   perl_TestHexDifferences = pkgs.callPackage ../TestHexDifferences {};
 
   name = "MaxMind-DB-Writer-0.300003";
-  src  = fetchurl {
-    url    = "mirror://cpan/authors/id/M/MA/MAXMIND/${name}.tar.gz";
+  src = fetchurl {
+    url = "mirror://cpan/authors/id/M/MA/MAXMIND/${name}.tar.gz";
     sha256 = "0gpbrlmxjl45k0wg5v9ghw415hd0fns9fk8ncxzlfyjzjsxgalxs";
   };
 
   configurePhase = "touch Makefile.PL";
-  buildPhase     = "perl Build.PL --prefix=$out; ./Build build";
-  installPhase   = "./Build install";
-  checkPhase     = "./Build test";
+  buildPhase = "perl Build.PL --prefix=$out; ./Build build";
+  installPhase = "./Build install";
+  checkPhase = "./Build test";
 
   patches = [
     ./writer-c-tree.patch
@@ -58,8 +58,8 @@ buildPerlPackage rec {
   ];
 
   meta = {
-    homepage    = http://metacpan.org/release/MaxMind-DB-Writer;
+    homepage = http://metacpan.org/release/MaxMind-DB-Writer;
     description = "Create MaxMind DB database files";
-    license     = with stdenv.lib.licenses; [ artistic1 gpl1Plus ];
+    license = with stdenv.lib.licenses; [ artistic1 gpl1Plus ];
   };
 }

@@ -1,9 +1,9 @@
 { stdenv, pythonPackages }:
 
 pythonPackages.buildPythonPackage rec {
-  pname   = "maxminddb";
+  pname = "maxminddb";
   version = "1.4.1";
-  name    = "${pname}-${version}";
+  name = "${pname}-${version}";
 
   src = pythonPackages.fetchPypi {
     inherit pname version;

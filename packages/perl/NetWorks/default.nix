@@ -3,11 +3,11 @@
 # nix-generate-from-cpan
 buildPerlPackage rec {
   perl_MathInt128 = pkgs.callPackage ../MathInt128 {};
-  perl_SubQuote   = pkgs.callPackage ../SubQuote {};
+  perl_SubQuote = pkgs.callPackage ../SubQuote {};
 
   name = "Net-Works-0.22";
-  src  = fetchurl {
-    url    = "mirror://cpan/authors/id/M/MA/MAXMIND/${name}.tar.gz";
+  src = fetchurl {
+    url = "mirror://cpan/authors/id/M/MA/MAXMIND/${name}.tar.gz";
     sha256 = "0ac9b23dfbca184e28729b245394bc6693aadb6fc451caa995b4b719ec0ee9ff";
   };
 
@@ -22,6 +22,6 @@ buildPerlPackage rec {
 
   meta = {
     description = "Sane APIs for IP addresses and networks";
-    license     = with stdenv.lib.licenses; [ artistic1 gpl1Plus ];
+    license = with stdenv.lib.licenses; [ artistic1 gpl1Plus ];
   };
 }

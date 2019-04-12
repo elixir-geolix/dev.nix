@@ -2,16 +2,16 @@
 
 # nix-generate-from-cpan
 buildPerlPackage rec {
-  perl_DataIEEE754           = pkgs.callPackage ../DataIEEE754 {};
-  perl_DataPrinter           = pkgs.callPackage ../DataPrinter {};
-  perl_MaxMindDBCommon       = pkgs.callPackage ../MaxMindDBCommon {};
+  perl_DataIEEE754 = pkgs.callPackage ../DataIEEE754 {};
+  perl_DataPrinter = pkgs.callPackage ../DataPrinter {};
+  perl_MaxMindDBCommon = pkgs.callPackage ../MaxMindDBCommon {};
   perl_MooXStrictConstructor = pkgs.callPackage ../MooXStrictConstructor {};
-  perl_ScalarUtil            = pkgs.callPackage ../ScalarUtil {};
-  perl_TestBits              = pkgs.callPackage ../TestBits {};
+  perl_ScalarUtil = pkgs.callPackage ../ScalarUtil {};
+  perl_TestBits = pkgs.callPackage ../TestBits {};
 
   name = "MaxMind-DB-Reader-1.000013";
-  src  = fetchurl {
-    url    = "mirror://cpan/authors/id/M/MA/MAXMIND/${name}.tar.gz";
+  src = fetchurl {
+    url = "mirror://cpan/authors/id/M/MA/MAXMIND/${name}.tar.gz";
     sha256 = "b8ce321cc94d71361edcf203af1bfd6ea0286fdd27b7550ecc5fad78a1abed70";
   };
 
@@ -34,8 +34,8 @@ buildPerlPackage rec {
   ];
 
   meta = {
-    homepage    = http://metacpan.org/release/MaxMind-DB-Reader;
+    homepage = http://metacpan.org/release/MaxMind-DB-Reader;
     description = "Read MaxMind DB files and look up IP addresses";
-    license      = stdenv.lib.licenses.artistic2;
+    license = stdenv.lib.licenses.artistic2;
   };
 }

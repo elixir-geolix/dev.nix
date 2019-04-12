@@ -5,8 +5,8 @@ buildPerlPackage rec {
   perl_SerealDecoder = pkgs.callPackage ../SerealDecoder {};
 
   name = "Sereal-Encoder-4.005";
-  src  = fetchurl {
-    url    = "mirror://cpan/authors/id/Y/YV/YVES/${name}.tar.gz";
+  src = fetchurl {
+    url = "mirror://cpan/authors/id/Y/YV/YVES/${name}.tar.gz";
     sha256 = "02hbk5dwq7fpnyb3vp7xxhb41ra48xhghl13p9pjq9lzsqlb6l19";
   };
 
@@ -18,6 +18,6 @@ buildPerlPackage rec {
 
   meta = {
     description = "Fast, compact, powerful binary serialization";
-    license     = with stdenv.lib.licenses; [ artistic1 gpl1Plus ];
+    license = with stdenv.lib.licenses; [ artistic1 gpl1Plus ];
   };
 }

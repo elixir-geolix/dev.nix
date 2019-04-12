@@ -3,9 +3,9 @@
 pythonPackages.buildPythonPackage rec {
   python_maxminddb = pkgs.callPackage ../maxminddb { inherit pythonPackages; };
 
-  pname   = "geoip2";
+  pname = "geoip2";
   version = "2.9.0";
-  name    = "${pname}-${version}";
+  name = "${pname}-${version}";
 
   src = pythonPackages.fetchPypi {
     inherit pname version;

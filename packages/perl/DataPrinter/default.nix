@@ -5,8 +5,8 @@ buildPerlPackage rec {
   perl_ClonePP = pkgs.callPackage ../ClonePP {};
 
   name = "Data-Printer-0.40";
-  src  = fetchurl {
-    url    = "mirror://cpan/authors/id/G/GA/GARU/${name}.tar.gz";
+  src = fetchurl {
+    url = "mirror://cpan/authors/id/G/GA/GARU/${name}.tar.gz";
     sha256 = "0njjh8zp5afc4602jrnmg89icj7gfsil6i955ypcqxc2gl830sb0";
   };
 
@@ -18,6 +18,6 @@ buildPerlPackage rec {
 
   meta = {
     description = "Colored pretty-print of Perl data structures and objects";
-    license     = with stdenv.lib.licenses; [ artistic1 gpl1Plus ];
+    license = with stdenv.lib.licenses; [ artistic1 gpl1Plus ];
   };
 }
