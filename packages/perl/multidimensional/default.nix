@@ -4,9 +4,11 @@
 buildPerlPackage rec {
   perl_LexicalSealRequireHints = pkgs.callPackage ../LexicalSealRequireHints {};
 
-  name = "multidimensional-0.013";
+  pname = "multidimensional";
+  version = "0.013";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/I/IL/ILMARI/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/I/IL/ILMARI/${pname}-${version}.tar.gz";
     sha256 = "3d20ce3e2307c3cfb13f2d53ad99bba6f87ea20b53f7ffebb4308d88ccfee50a";
   };
 

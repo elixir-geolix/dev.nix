@@ -6,9 +6,11 @@ buildPerlPackage rec {
   perl_indirect = pkgs.callPackage ../indirect {};
   perl_multidimensional  = pkgs.callPackage ../multidimensional {};
 
-  name = "MooX-StrictConstructor-0.008";
+  pname = "MooX-StrictConstructor";
+  version = "0.008";
+
   src  = fetchurl {
-    url = "mirror://cpan/authors/id/H/HA/HARTZELL/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/H/HA/HARTZELL/${pname}-${version}.tar.gz";
     sha256 = "bf1ff7b5d22e9fbaa37eafaa7bdef1997fbd853f1d893ebdcf75a360e67081ac";
   };
 

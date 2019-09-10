@@ -16,9 +16,11 @@ buildPerlPackage rec {
   perl_TestBits = pkgs.callPackage ../TestBits {};
   perl_TestHexDifferences = pkgs.callPackage ../TestHexDifferences {};
 
-  name = "MaxMind-DB-Writer-0.300003";
+  pname = "MaxMind-DB-Writer";
+  version = "0.300003";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/M/MA/MAXMIND/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/M/MA/MAXMIND/${pname}-${version}.tar.gz";
     sha256 = "0gpbrlmxjl45k0wg5v9ghw415hd0fns9fk8ncxzlfyjzjsxgalxs";
   };
 

@@ -5,9 +5,11 @@ buildPerlPackage rec {
   perl_MathInt128 = pkgs.callPackage ../MathInt128 {};
   perl_SubQuote = pkgs.callPackage ../SubQuote {};
 
-  name = "Net-Works-0.22";
+  pname = "Net-Works";
+  version = "0.22";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/M/MA/MAXMIND/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/M/MA/MAXMIND/${pname}-${version}.tar.gz";
     sha256 = "0ac9b23dfbca184e28729b245394bc6693aadb6fc451caa995b4b719ec0ee9ff";
   };
 

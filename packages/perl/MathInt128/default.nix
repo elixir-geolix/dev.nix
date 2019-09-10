@@ -4,9 +4,11 @@
 buildPerlPackage rec {
   perl_MathInt64 = pkgs.callPackage ../MathInt64 {};
 
-  name = "Math-Int128-0.22";
+  pname = "Math-Int128";
+  version = "0.22";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/S/SA/SALVA/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/S/SA/SALVA/${pname}-${version}.tar.gz";
     sha256 = "a630ca401753866955f1173848ab5b4ac4ad5ca6ad9087f11cdf91dde85119bc";
   };
 

@@ -2,9 +2,11 @@
 
 # nix-generate-from-cpan
 buildPerlPackage rec {
-  name = "Clone-PP-1.07";
+  pname = "Clone-PP";
+  version = "1.07";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/N/NE/NEILB/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/N/NE/NEILB/${pname}-${version}.tar.gz";
     sha256 = "bf85e109b7d9a10677db82fa65c1720ae95499a49cbb676d4b3d1b183786b395";
   };
 

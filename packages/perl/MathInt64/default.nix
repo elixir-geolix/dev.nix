@@ -2,9 +2,11 @@
 
 # nix-generate-from-cpan
 buildPerlPackage rec {
-  name = "Math-Int64-0.54";
+  pname = "Math-Int64";
+  version = "0.54";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/S/SA/SALVA/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/S/SA/SALVA/${pname}-${version}.tar.gz";
     sha256 = "dcfc51e698437ea6b9cefe0276215c56cdb6a7f85e3e24a2b6b4189f1960d351";
   };
 

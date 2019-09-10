@@ -9,9 +9,11 @@ buildPerlPackage rec {
   perl_ScalarUtil = pkgs.callPackage ../ScalarUtil {};
   perl_TestBits = pkgs.callPackage ../TestBits {};
 
-  name = "MaxMind-DB-Reader-1.000013";
+  pname = "MaxMind-DB-Reader";
+  version = "1.000013";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/M/MA/MAXMIND/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/M/MA/MAXMIND/${pname}-${version}.tar.gz";
     sha256 = "b8ce321cc94d71361edcf203af1bfd6ea0286fdd27b7550ecc5fad78a1abed70";
   };
 

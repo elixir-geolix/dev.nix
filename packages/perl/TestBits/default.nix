@@ -2,9 +2,11 @@
 
 # nix-generate-from-cpan
 buildPerlPackage rec {
-  name = "Test-Bits-0.02";
+  pname = "Test-Bits";
+  version = "0.02";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/D/DR/DROLSKY/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/D/DR/DROLSKY/${pname}-${version}.tar.gz";
     sha256 = "a9826f56483a27e2c63156590f328a3633e30375c10dfc89f6690e3929de0bc3";
   };
 

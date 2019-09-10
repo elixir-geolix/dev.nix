@@ -2,9 +2,11 @@
 
 # nix-generate-from-cpan
 buildPerlPackage rec {
-  name = "Sereal-Decoder-4.005";
+  pname = "Sereal-Decoder";
+  version = "4.005";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/Y/YV/YVES/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/Y/YV/YVES/${pname}-${version}.tar.gz";
     sha256 = "17syqbq17qw6ajg3w88q9ljdm4c2b7zadq9pwshxxgyijg8dlfh4";
   };
 

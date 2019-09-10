@@ -4,9 +4,11 @@
 buildPerlPackage rec {
   perl_ClonePP = pkgs.callPackage ../ClonePP {};
 
-  name = "Data-Printer-0.40";
+  pname = "Data-Printer";
+  version = "0.40";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/G/GA/GARU/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/G/GA/GARU/${pname}-${version}.tar.gz";
     sha256 = "0njjh8zp5afc4602jrnmg89icj7gfsil6i955ypcqxc2gl830sb0";
   };
 

@@ -4,9 +4,11 @@
 buildPerlPackage rec {
   perl_LexicalSealRequireHints = pkgs.callPackage ../LexicalSealRequireHints {};
 
-  name = "bareword-filehandles-0.005";
+  pname = "bareword-filehandles";
+  version = "0.005";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/I/IL/ILMARI/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/I/IL/ILMARI/${pname}-${version}.tar.gz";
     sha256 = "66ab8cf4118187c2abc8178389007cd0f836702aff7fbaab37edbc2b34cdb139";
   };
 

@@ -2,9 +2,11 @@
 
 # nix-generate-from-cpan
 buildPerlPackage rec {
-  name = "indirect-0.37";
+  pname = "indirect";
+  version = "0.37";
+
   src = fetchurl {
-    url = "mirror://cpan/authors/id/V/VP/VPIT/${name}.tar.gz";
+    url = "mirror://cpan/authors/id/V/VP/VPIT/${pname}-${version}.tar.gz";
     sha256 = "ada92a3edb04ffd882fb6b5b4f2324dc9f385c19afc78c37ef27fcb52798fba4";
   };
 
