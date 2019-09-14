@@ -9,48 +9,42 @@ stdenv.mkDerivation rec {
 
   shellHook = ''
     PROJECT_ROOT="$(pwd)"
-    LOG_POSTGRESQL="$PROJECT_ROOT/runtime/postgresql/postgresql.log"
     SHELL_LOCK="$PROJECT_ROOT/runtime/shell.lock"
     SHELL_NAME="geolix"
 
     function finish {
-      pg_ctl stop
+      pg_ctl \
+          --pgdata="$PROJECT_ROOT/runtime/postgresql/data" \
+          stop
 
       rm -f "$SHELL_LOCK"
     }
 
-    function configure_postgresql {
-      createuser -s postgres
+    function setup_postgres {
+      [ -f runtime/postgresql/data/pg_hba.conf ] && return
 
-      psql -U postgres -c 'CREATE DATABASE geolix;'
-      psql -U postgres -c 'CREATE USER geolix;'
-      psql -U postgres -c "ALTER USER geolix PASSWORD 'geolix';"
-      psql -U postgres -c 'GRANT ALL PRIVILEGES ON DATABASE geolix TO geolix;'
+      mkdir -p runtime/postgresql/data
+
+      initdb \
+          --pgdata="$PROJECT_ROOT/runtime/postgresql/data" \
+          --pwfile="$PROJECT_ROOT/runtime/etc/postgresql.pwd" \
+          --username="postgres" \
+          --auth="md5" \
+      >/dev/null
     }
-
-    function setup_postgresql {
-      mkdir -p runtime/postgresql
-      initdb runtime/postgresql
-
-      sed "s|{{PATH_PROJECT}}|$PROJECT_ROOT|g" \
-          runtime/etc/postgresql.conf \
-      > runtime/postgresql/postgresql.conf
-    }
-
-    export PGDATA="$PROJECT_ROOT/runtime/postgresql"
 
     if [ ! -f "$SHELL_LOCK" ]; then
       touch "$SHELL_LOCK"
 
       SHELL_NAME="$SHELL_NAME|\[\e[1m\]master\[\e[0m\]"
 
-      setup_postgresql
+      setup_postgres
 
-      pg_ctl start -w \
-          -D "$PROJECT_ROOT/runtime/postgresql" \
-          -l "$LOG_POSTGRESQL"
-
-      configure_postgresql
+      pg_ctl \
+          --pgdata="$PROJECT_ROOT/runtime/postgresql/data" \
+          --log="$PROJECT_ROOT/runtime/postgresql/postgresql.log" \
+          -o "-p 5432" \
+          start
 
       trap finish EXIT
     fi
