@@ -58,11 +58,14 @@ stdenv.mkDerivation rec {
   '';
 
   elixir = pkgs.callPackage ./packages/elixir {};
+  geoip2_csv_converter = pkgs.callPackage ./packages/geoip2-csv-converter {};
   perl_MaxMindDBWriter = pkgs.callPackage ./packages/perl/MaxMindDBWriter {};
   python2_geoip2 = pkgs.callPackage ./packages/python/geoip2 { pythonPackages = python2Packages; };
 
   buildInputs = [
     elixir
+
+    geoip2_csv_converter
 
     perl
     perl_MaxMindDBWriter
