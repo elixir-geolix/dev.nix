@@ -60,7 +60,8 @@ stdenv.mkDerivation rec {
   elixir = pkgs.callPackage ./packages/elixir {};
   geoip2_csv_converter = pkgs.callPackage ./packages/geoip2-csv-converter {};
   perl_MaxMindDBWriter = pkgs.callPackage ./packages/perl/MaxMindDBWriter {};
-  python2_geoip2 = pkgs.callPackage ./packages/python/geoip2 { pythonPackages = python2Packages; };
+  postgresql_ip4r = pkgs.callPackage ./packages/postgresql/ip4r {};
+  python3_geoip2 = pkgs.callPackage ./packages/python/geoip2 { pythonPackages = python3Packages; };
 
   buildInputs = [
     elixir
@@ -73,8 +74,8 @@ stdenv.mkDerivation rec {
     perlPackages.FileSlurper
     perlPackages.CpanelJSONXS
 
-    python2
-    python2_geoip2
+    python3
+    python3_geoip2
 
     postgresql
   ];
