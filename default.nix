@@ -63,6 +63,8 @@ stdenv.mkDerivation rec {
   postgresql_ip4r = pkgs.callPackage ./packages/postgresql/ip4r {};
   python3_geoip2 = pkgs.callPackage ./packages/python/geoip2 { pythonPackages = python3Packages; };
 
+  postgresql = pkgs.postgresql.withPackages (_: [ postgresql_ip4r ]);
+
   buildInputs = [
     elixir
 
