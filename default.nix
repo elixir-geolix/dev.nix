@@ -31,6 +31,9 @@ stdenv.mkDerivation rec {
           --username="postgres" \
           --auth="md5" \
       >/dev/null
+
+      echo "unix_socket_directories = '$PROJECT_ROOT/runtime/postgresql'" \
+          >> "$PROJECT_ROOT/runtime/postgresql/data/postgresql.conf"
     }
 
     if [ ! -f "$SHELL_LOCK" ]; then
@@ -50,6 +53,8 @@ stdenv.mkDerivation rec {
     fi
 
     export SHELL_DATA_DIR="$(pwd)/runtime"
+
+    export PGHOST="$PROJECT_ROOT/runtime/postgresql"
 
     export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_path '\"$SHELL_DATA_DIR/erlang-history\"'"
     export HEX_HOME="$SHELL_DATA_DIR/hex"
