@@ -4,6 +4,7 @@
 buildPerlPackage rec {
   perl_DataIEEE754 = pkgs.callPackage ../DataIEEE754 {};
   perl_DataPrinter = pkgs.callPackage ../DataPrinter {};
+  perl_MathInt128 = pkgs.callPackage ../MathInt128 {};
   perl_MaxMindDBCommon = pkgs.callPackage ../MaxMindDBCommon {};
   perl_MooXStrictConstructor = pkgs.callPackage ../MooXStrictConstructor {};
   perl_ScalarUtil = pkgs.callPackage ../ScalarUtil {};
@@ -27,6 +28,7 @@ buildPerlPackage rec {
   propagatedBuildInputs = with perlPackages; [
     perl_DataIEEE754
     perl_DataPrinter
+    perl_MathInt128
     perl_MaxMindDBCommon
     perl_MooXStrictConstructor
 
