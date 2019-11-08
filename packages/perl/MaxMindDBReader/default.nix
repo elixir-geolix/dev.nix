@@ -11,11 +11,11 @@ buildPerlPackage rec {
   perl_TestBits = pkgs.callPackage ../TestBits {};
 
   pname = "MaxMind-DB-Reader";
-  version = "1.000013";
+  version = "1.000014";
 
   src = fetchurl {
     url = "mirror://cpan/authors/id/M/MA/MAXMIND/${pname}-${version}.tar.gz";
-    sha256 = "b8ce321cc94d71361edcf203af1bfd6ea0286fdd27b7550ecc5fad78a1abed70";
+    sha256 = "1a9rrvarw3q6378w3sqv632w36a9bsh0r90yfa49lzwnkj7hf81q";
   };
 
   buildInputs = with perlPackages; [
