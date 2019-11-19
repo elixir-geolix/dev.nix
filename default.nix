@@ -72,8 +72,11 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     elixir
+    erlang
+    nodejs
 
     geoip2_csv_converter
+    inotify-tools
 
     perl
     perl_MaxMindDBWriter
