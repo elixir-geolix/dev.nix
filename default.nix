@@ -54,11 +54,10 @@ stdenv.mkDerivation rec {
 
     export SHELL_DATA_DIR="$(pwd)/runtime"
 
-    export PGHOST="$PROJECT_ROOT/runtime/postgresql"
-
     export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_path '\"$SHELL_DATA_DIR/erlang-history\"'"
     export HEX_HOME="$SHELL_DATA_DIR/hex"
     export MIX_HOME="$SHELL_DATA_DIR/mix"
+    export PGHOST="$SHELL_DATA_DIR/postgresql"
     export PS1="[$SHELL_NAME|\[\e[1m\]\w\[\e[0m\]]$ "
   '';
 
