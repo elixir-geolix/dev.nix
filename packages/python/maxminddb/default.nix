@@ -2,21 +2,17 @@
 
 pythonPackages.buildPythonPackage rec {
   pname = "maxminddb";
-  version = "1.4.1";
+  version = "2.0.1";
   name = "${pname}-${version}";
 
   src = pythonPackages.fetchPypi {
     inherit pname version;
-    sha256 = "04mpilsj76m29id5xfi8mmasdmh27ldn7r0dmh2rj6a8v2y5256z";
+    sha256 = "0j489vqbhp92rz5ysbg4vpf1gz7ll32mi7hf7im9l8l87d646hpd";
   };
-
-  buildInputs = with pythonPackages; [
-    mock
-    nose
-  ];
 
   propagatedBuildInputs = with pythonPackages; [
     ipaddress
-    requests-mock
   ];
+
+  doCheck = false;
 }

@@ -2,19 +2,23 @@
 
 pythonPackages.buildPythonPackage rec {
   python_maxminddb = pkgs.callPackage ../maxminddb { inherit pythonPackages; };
+  python_requests = pkgs.callPackage ../requests { inherit pythonPackages; };
 
   pname = "geoip2";
-  version = "2.9.0";
+  version = "4.0.1";
   name = "${pname}-${version}";
 
   src = pythonPackages.fetchPypi {
     inherit pname version;
-    sha256 = "1w7cay5q6zawjzivqbwz5cqx1qbdjw6kbriccb7l46p7b39fkzzp";
+    sha256 = "06z6b1apgdr4s14i24yz5ds99swh1vjmcsv2w6n4zy63v5mmznlm";
   };
 
   propagatedBuildInputs = with pythonPackages; [
-    python_maxminddb
+    aiohttp
 
-    requests
+    python_requests
+    python_maxminddb
   ];
+
+  doCheck = false;
 }
